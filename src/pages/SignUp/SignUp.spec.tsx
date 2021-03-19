@@ -3,10 +3,13 @@ import { fireEvent, render, screen } from '@testing-library/react'
 import '@testing-library/jest-dom/extend-expect'
 import SignUp from './SignUp';
 import userEvent from '@testing-library/user-event';
+import { BrowserRouter } from 'react-router-dom';
 
 describe('Page: SignUp', () => {
+  const wrapper = (props: any) => <BrowserRouter {...props} />
+
   it('should show render the page', () => {
-    render(<SignUp />)
+    render(<SignUp />, { wrapper: wrapper })
 
     expect(screen.getByPlaceholderText("Email")).toBeVisible()
     expect(screen.getByPlaceholderText("Name")).toBeVisible()
@@ -16,7 +19,7 @@ describe('Page: SignUp', () => {
   });
 
   it('should be able to sign up', () => {
-    render(<SignUp />)
+    render(<SignUp />, { wrapper: wrapper })
 
     const usernameInput = screen.getByPlaceholderText("Email")
     const nameInput = screen.getByPlaceholderText("Name")
