@@ -1,6 +1,6 @@
 import React, { FC, FormEvent, useState } from 'react'
 import { Box, Button, InputProps, Link } from '@chakra-ui/react'
-import SimpleForm from '../../components/SimpleForm'
+import { SimpleForm } from '../../components/SimpleForm'
 import { ROUTES } from '../../utils/routes'
 import { Link as RouterLink } from "react-router-dom"
 
